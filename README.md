@@ -10,19 +10,20 @@ The project investigates clinical and categorical patient information, performs 
 
 In 1996, an important medical study involved patients with HIV/AIDS in order to evaluate the effectiveness of different antiretroviral treatments. Patients were divided into four treatment groups, each receiving a different experimental therapeutic regimen. The objective was to analyze patient information and treatment outcomes, with particular attention to whether patients were classified as infected after treatment.
 
+This clinical context provides the basis for a machine learning analysis of the data.
+
 ---
 
 ## Dataset Overview
 
-The dataset used in this project contains healthcare statistics and categorical information about patients diagnosed with AIDS.
-
-It includes clinical measurements, demographic information, treatment-related variables, and binary/categorical indicators describing patient conditions and treatment history.
+The dataset contains healthcare statistics and categorical information about patients involved in an AIDS-related study.
+It includes clinical measurements, demographic information, treatment-related variables, and binary/categorical indicators describing patient conditions and treatment history. In this project, the version with 5,000 instances and 23 features was used. 
 
 The target variable is:
 
 - `infected`: binary classification target. 
 
-The dataset was obtained from Kaggle and is related to a clinical study/article concerning AIDS patient treatment and outcomes.
+The dataset was obtained from Kaggle and is related to the following clinical article:
 
 - Dataset source: [Kaggle - AIDS Virus Infection Prediction](https://www.kaggle.com/datasets/aadarshvelu/aids-virus-infection-prediction/data)
 - Related article/reference: [A trial comparing nucleoside monotherapy with combination therapy in HIV-infected adults with CD4 cell counts from 200 to 500 per cubic millimeter.](10.1056/NEJM199610103351501)
@@ -34,7 +35,7 @@ Please download it directly from Kaggle before running the notebook.
 
 ## Attribute Information
 
- In this project, the version with 5,000 instances and 23 features was used. The dataset contains the following attributes:
+ The dataset contains the following attributes:
 
 | Attribute | Description |
 |---|---|
@@ -66,16 +67,12 @@ Please download it directly from Kaggle before running the notebook.
 
 ## Project Goals
 
-The main goals of this project are:
-
-- explore the structure and characteristics of the AIDS healthcare dataset;
-- analyze numerical and categorical features;
-- inspect class distribution and possible imbalance;
-- visualize feature distributions and correlations;
-- preprocess the dataset for machine learning;
-- handle class imbalance through oversampling;
-- compare multiple classification algorithms;
-- evaluate model performance using cross-validation and test-set metrics.
+- Explore and understand the AIDS healthcare dataset
+- Preprocess the data for machine learning analysis
+- Handle class imbalance using oversampling techniques
+- Train and compare different classification models
+- Evaluate model performance using appropriate classification metrics
+- Identify the best-performing model for infection outcome prediction
 
 ---
 
@@ -83,18 +80,17 @@ The main goals of this project are:
 
 The project follows these main steps:
 
-1. Dataset loading and inspection
+1. Dataset loading and initial inspection
 2. Exploratory Data Analysis
-3. Missing value analysis
-4. Feature type identification
+3. Feature analysis and visualization
+4. Missing value and outlier analysis
 5. Categorical feature encoding
-6. Outlier analysis
-7. Correlation analysis
-8. Feature importance analysis
-9. Class imbalance handling
-10. Model training and comparison
-11. Hyperparameter tuning
-12. Final evaluation
+6. Correlation and feature importance analysis
+7. Dataset preprocessing for machine learning
+8. Class imbalance handling using oversampling
+9. Model training and comparison
+10. Hyperparameter tuning
+11. Model evaluation using classification metrics, confusion matrices, and learning curves
 
 ---
 
@@ -105,8 +101,8 @@ To address this issue, Random Oversampling was applied to the minority class.
 
 | Dataset version | Class 0 | Class 1 |
 |---|---:|---:|
-| Original dataset | TODO | TODO |
-| After oversampling | TODO | TODO |
+| Original dataset | 3421 | 1579 |
+| After oversampling | 3421 | 3421 |
 
 ---
 
@@ -121,7 +117,7 @@ The following classification models were tested:
 - K-Nearest Neighbors
 - Multi-Layer Perceptron
 
-The models were evaluated using cross-validation and final test-set evaluation.
+They were evaluated using repeated stratified cross-validation on the training set and a final evaluation on the test set.
 
 ---
 
@@ -129,16 +125,25 @@ The models were evaluated using cross-validation and final test-set evaluation.
 
 The models were compared using accuracy, classification reports, confusion matrices, and learning curves.
 
-| Model | Mean CV Accuracy | Test Accuracy |
+| Model | Mean CV Accuracy ± Std | Test Accuracy |
 |---|---:|---:|
-| Random Forest | TODO | TODO |
-| Decision Tree | TODO | TODO |
-| SVC | TODO | TODO |
-| Logistic Regression | TODO | TODO |
-| K-Nearest Neighbors | TODO | TODO |
-| MLP Classifier | TODO | TODO |
+| Random Forest | 0.7894 ± 0.0135 | 0.81 |
+| Decision Tree | 0.7338 ± 0.0154 | 0.76 |
+| SVC | 0.6471 ± 0.0088 | 0.71 |
+| Logistic Regression | 0.6221 ± 0.0130 | 0.63 |
+| K-Nearest Neighbors | 0.6464 ± 0.0109 | 0.74 |
+| MLP Classifier | 0.6617 ± 0.0095 | 0.77 |
+| TensorFlow MLP | 0.6572 ± 0.0137 | 0.65 |
 
-The best-performing model was:
+Random Forest showed the most reliable performance in the main model comparison, achieving the highest mean cross-validation accuracy and the best test-set accuracy. However, the hyperparameter search was performed on a limited search space. Therefore, the obtained configuration should not be considered globally optimal, and further tuning could potentially improve the results.
+In some experiments, models trained with default parameters, especially Random Forest and Logistic Regression, showed competitive performance. This suggests that model behavior may depend on the selected hyperparameter search space and evaluation setting.
 
-```text
-TODO: insert best model
+---
+
+## Future Developments
+
+- Integrating the full preprocessing workflow into a machine learning pipeline
+- Applying resampling techniques only within the training process to avoid data leakage
+- Expanding the hyperparameter search space
+- Testing additional models and evaluation strategies
+- Comparing performance on larger versions of the dataset
