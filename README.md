@@ -6,6 +6,11 @@ The project investigates clinical and categorical patient information, performs 
 
 > This project is intended for educational and portfolio purposes only. It is not intended to provide medical advice, diagnosis, or clinical decision support.
 
+## Context
+
+In 1996, an important medical study involved patients with HIV/AIDS in order to evaluate the effectiveness of different antiretroviral treatments. Patients were divided into four treatment groups, each receiving a different experimental therapeutic regimen. The objective was to analyze patient information and treatment outcomes, with particular attention to whether patients were classified as infected after treatment.
+
+This project uses the dataset derived from this study to perform exploratory data analysis and apply machine learning models for binary classification.
 ---
 
 ## Dataset Overview
