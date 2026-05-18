@@ -155,6 +155,17 @@ Detailed outputs are available in the notebook.
 
 ---
 
+## How to Run
+
+1. Clone the repository.
+2. Install the main Python dependencies:
+   pip install -r requirements.txt
+3. Download the dataset from Kaggle:
+   Kaggle - AIDS Virus Infection Prediction
+5. Open and run the Jupyter notebook.
+
+---
+
 ## Future Developments
 
 - Integrate the full preprocessing workflow into a machine learning pipeline
