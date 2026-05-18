@@ -16,12 +16,12 @@ It includes clinical measurements, demographic information, treatment-related va
 
 The target variable is:
 
-- `infected`: binary classification target.
+- `infected`: binary classification target. The patient is infected with AIDS (0=No, 1=Yes)
 
 The dataset was obtained from Kaggle and is related to a clinical study/article concerning AIDS patient treatment and outcomes.
 
-- Dataset source: [Kaggle - INSERT DATASET NAME](INSERT_KAGGLE_LINK_HERE)
-- Related article/reference: [INSERT ARTICLE TITLE](INSERT_ARTICLE_LINK_OR_DOI_HERE)
+- Dataset source: [Kaggle - AIDS Virus Infection Prediction](https://www.kaggle.com/datasets/aadarshvelu/aids-virus-infection-prediction/data)
+- Related article/reference: [A trial comparing nucleoside monotherapy with combination therapy in HIV-infected adults with CD4 cell counts from 200 to 500 per cubic millimeter.](DOI: 10.1056/NEJM199610103351501)
 
 For licensing and privacy reasons, the dataset is not included in this repository.  
 Please download it directly from Kaggle before running the notebook.
