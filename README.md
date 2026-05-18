@@ -10,7 +10,7 @@ The project investigates clinical and categorical patient information, performs 
 
 ## Dataset Overview
 
-The dataset used in this project contains healthcare statistics and categorical information about patients diagnosed with AIDS.
+The dataset used in this project contains healthcare statistics and categorical information about patients who have been diagnosed with AIDS.
 
 It includes clinical measurements, demographic information, treatment-related variables, and binary/categorical indicators describing patient conditions and treatment history.
 
