@@ -10,12 +10,11 @@ The project investigates clinical and categorical patient information, performs 
 
 In 1996, an important medical study involved patients with HIV/AIDS in order to evaluate the effectiveness of different antiretroviral treatments. Patients were divided into four treatment groups, each receiving a different experimental therapeutic regimen. The objective was to analyze patient information and treatment outcomes, with particular attention to whether patients were classified as infected after treatment.
 
-This project uses the dataset derived from this study to perform exploratory data analysis and apply machine learning models for binary classification.
 ---
 
 ## Dataset Overview
 
-The dataset used in this project contains healthcare statistics and categorical information about patients who have been diagnosed with AIDS.
+The dataset used in this project contains healthcare statistics and categorical information about patients diagnosed with AIDS.
 
 It includes clinical measurements, demographic information, treatment-related variables, and binary/categorical indicators describing patient conditions and treatment history.
 
@@ -35,7 +34,7 @@ Please download it directly from Kaggle before running the notebook.
 
 ## Attribute Information
 
-The dataset contains the following attributes:
+ In this project, the version with 5,000 instances and 23 features was used. The dataset contains the following attributes:
 
 | Attribute | Description |
 |---|---|
