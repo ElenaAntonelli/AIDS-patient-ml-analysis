@@ -1,4 +1,4 @@
-# AIDS Patient Machine Learning Analysis
+# HIV/AIDS Patient Machine Learning Analysis
 
 This repository contains an exploratory data analysis and machine learning project based on a healthcare dataset related to patients diagnosed with AIDS.
 
@@ -137,6 +137,22 @@ The models were compared using accuracy, classification reports, confusion matri
 
 Random Forest showed the most reliable performance in the main model comparison, achieving the highest mean cross-validation accuracy and the best test-set accuracy. However, the hyperparameter search was performed on a limited search space. Therefore, the obtained configuration should not be considered globally optimal, and further tuning could potentially improve the results.
 In some experiments, models trained with default parameters, especially Random Forest and Logistic Regression, showed competitive performance. This suggests that model behavior may depend on the selected hyperparameter search space and evaluation setting.
+
+For more complete results, please consult the code directly.
+
+---
+
+## Technologies Used
+
+- Python
+- Jupyter Notebook
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-learn
+- Imbalanced-learn
+- TensorFlow / Keras
 
 ---
 
