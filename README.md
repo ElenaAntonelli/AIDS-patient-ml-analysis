@@ -1,8 +1,8 @@
 # HIV/AIDS Patient Machine Learning Analysis
 
-This repository contains an exploratory data analysis and machine learning project based on a healthcare dataset related to patients diagnosed with AIDS.
+This repository contains an exploratory data analysis and machine learning project based on a healthcare dataset related to HIV/AIDS patient records.
 
-The project investigates clinical and categorical patient information, performs preprocessing and feature analysis, addresses class imbalance, and compares different machine learning models for binary classification.
+The analysis investigates clinical and categorical patient information, performs preprocessing and feature analysis, addresses class imbalance, and compares different machine learning models for binary classification.
 
 > This project is intended for educational and portfolio purposes only. It is not intended to provide medical advice, diagnosis, or clinical decision support.
 
@@ -10,7 +10,7 @@ The project investigates clinical and categorical patient information, performs 
 
 In 1996, an important medical study involved patients with HIV/AIDS in order to evaluate the effectiveness of different antiretroviral treatments. Patients were divided into four treatment groups, each receiving a different experimental therapeutic regimen. The objective was to analyze patient information and treatment outcomes, with particular attention to whether patients were classified as infected after treatment.
 
-This clinical context provides the basis for a machine learning analysis of the data.
+This clinical context provides the basis for a machine learning evaluation of the data.
 
 ---
 
@@ -39,35 +39,35 @@ Please download it directly from Kaggle before running the notebook.
 
 | Attribute | Description |
 |---|---|
-| `time` | time to failure or censoring. The time in hours/days elapsed until an event of interest (development of advanced symptoms or the achievement of a specific health state) occurs.Or it is the censoring time, i.e. the patient is still under treatment or has not yet reached the event of interest. |
-| `trt` | treatment indicator (0 = ZDV; 1 = ZDV + ddI, 2 = ZDV + Zal, 3 = ddI). Where ZDV = zidovudine, ddI = didanosine, Zal = zalcitabine. |
-| `age` | age (yrs) at baseline |
-| `wtkg` | weight (kg) at baseline |
-| `hemo` | hemophilia (0=no, 1=yes) |
-| `homo` | homosexual activity (0=no, 1=yes) |
-| `drugs` | history of IV drug use (0=no, 1=yes) |
-| `karnof` | Karnofsky score (on a scale of 0-100). It is a system used to evaluate the functional status and autonomy of a patient with a disease.The Karnofsky score ranges from 100 to 0, where: 100 represents a perfect state of health and normal activity without signs of illness; 0 represents a state of coma or death. |
-| `oprior` | Non-ZDV antiretroviral therapy pre-175 (0=no, 1=yes). So, it evaluates whether the patient has undergone non-zidovudine-based antiretroviral therapy prior to initiating treatment (175 weeks earlier). |
-| `z30` | ZDV was administered in the 30 days prior to the 175-week mark of observation. (0=no, 1=yes) |
+| `time` | time to failure or censoring. It indicates the time elapsed until the event of interest occurs, or the censoring time if the event has not been observed. |
+| `trt` | treatment group indicator: 0 = ZDV, 1 = ZDV + ddI, 2 = ZDV + Zal, 3 = ddI. Where ZDV = zidovudine, ddI = didanosine, Zal = zalcitabine. |
+| `age` | age (yrs) at baseline. |
+| `wtkg` | weight (kg) at baseline. |
+| `hemo` | hemophilia indicator: 0=no, 1=yes. |
+| `homo` | homosexual activity indicator: 0=no, 1=yes. |
+| `drugs` | history of IV drug use: 0=no, 1=yes. |
+| `karnof` | Karnofsky score (on a scale of 0-100). It is a system used to evaluate the functional status and autonomy of a patient with a disease. |
+| `oprior` | Non-ZDV antiretroviral therapy pre-175: 0=no, 1=yes. So, it evaluates whether the patient has undergone non-zidovudine-based antiretroviral therapy prior to initiating treatment (175 weeks earlier). |
+| `z30` | indicator of whether ZDV was administered in the 30 days before the 175-week observation mark: 0=no, 1=yes. |
 | `preanti` | days pre-175 antiretroviral therapy. Number of days or the duration that a patient has been on anti-retroviral therapy before reaching the 175-week mark since the start of observation or treatment. |
-| `race` | race (0=White, 1=non-white) |
-| `gender` | gender (0=F, 1=M) |
-| `str2` | antiretroviral history (0=naive, 1=experienced). "Naive" indicates that the patient have had no prior experience with antiretroviral therapy (they are newly diagnosed or have not yet started treatment for HIV); while "experienced" indicates that the patient has had prior experience with antiretroviral drugs, meaning they have received antiretroviral treatments in the past (with continuous treatment over time or interrupted and restarted). |
-| `strat` | antiretroviral history stratification (1 = 'Antiretroviral Naive', 2 = '> 1 but <= 52 weeks of prior antiretroviral therapy', 3 = '> 52 weeks') |
-| `symptom` | symptomatic indicator (0=asymp, 1=symp) |
-| `treat` | treatment indicator (0=ZDV only, 1=others) |
-| `offtrt` | indicator of off-trt before 96+/-5 weeks (0=no,1=yes). Indicator related to treatment cessation (off-trt) within a specific period of time. |
-| `cd40` | CD4 at baseline. CD4 is a surface protein found primarily on cells of the human immune system called helper T lymphocytes. HIV selectively attacks and destroys CD4+ cells, progressively weakening the immune system and making the body more vulnerable to opportunistic infections and other complications.Therefore, the count of CD4+ cells is used as an indicator to assess the severity of HIV infection and to monitor the progression of the disease over time. |
-| `cd420` | CD4 at 20+/-5 weeks |
-| `cd80` | CD8 at baseline. The CD8 is a surface protein found primarily on cells of the human immune system called cytotoxic T lymphocytes. These cells play a crucial role in defending the body against viral infections and tumor cells. |
-| `cd820` | CD8 at 20+/-5 weeks |
-| `infected` |  target variable. The patient is infected with AIDS (0=No, 1=Yes) |
+| `race` | race indicator: 0=white, 1=non-white. |
+| `gender` | gender indicator: 0=F, 1=M. |
+| `str2` | antiretroviral history: 0=naive, 1=experienced. |
+| `strat` | antiretroviral history stratification: 1 = 'Antiretroviral Naive', 2 = '> 1 but <= 52 weeks of prior antiretroviral therapy', 3 = '> 52 weeks'.|
+| `symptom` | symptomatic indicator: 0=asymp, 1=symp. |
+| `treat` | treatment indicator: 0=ZDV only, 1=others. |
+| `offtrt` | indicator of off-trt before 96+/-5 weeks: 0=no,1=yes. |
+| `cd40` | CD4 cell count at baseline. CD4 is a surface protein found primarily on cells of the human immune system called helper T lymphocytes. HIV selectively attacks and destroys CD4+ cells, progressively weakening the immune system and making the body more vulnerable to opportunistic infections and other complications. Therefore, the count of CD4+ cells is used as an indicator to assess the severity of HIV infection and to monitor the progression of the disease over time. |
+| `cd420` | CD4 cell count at 20+/-5 weeks. |
+| `cd80` | CD8 cell count at baseline. The CD8 is a surface protein found primarily on cells of the human immune system called cytotoxic T lymphocytes. These cells play a crucial role in defending the body against viral infections and tumor cells. |
+| `cd820` | CD8 cell count at 20+/-5 weeks. |
+| `infected` |  target variable. The patient is infected with AIDS: 0=No, 1=Yes. |
 
 ---
 
 ## Project Goals
 
-- Explore and understand the AIDS healthcare dataset
+- Explore and understand the HIV/AIDS healthcare dataset
 - Preprocess the data for machine learning analysis
 - Handle class imbalance using oversampling techniques
 - Train and compare different classification models
@@ -96,8 +96,7 @@ The project follows these main steps:
 
 ## Class Imbalance Handling
 
-The target classes were imbalanced in the original dataset.  
-To address this issue, Random Oversampling was applied to the minority class.
+The target classes were imbalanced in the original dataset. To address this issue, Random Oversampling was applied to the minority class.
 
 | Dataset version | Class 0 | Class 1 |
 |---|---:|---:|
@@ -135,10 +134,10 @@ The models were compared using accuracy, classification reports, confusion matri
 | MLP Classifier | 0.6617 ± 0.0095 | 0.77 |
 | TensorFlow MLP | 0.6572 ± 0.0137 | 0.65 |
 
-Random Forest showed the most reliable performance in the main model comparison, achieving the highest mean cross-validation accuracy and the best test-set accuracy. However, the hyperparameter search was performed on a limited search space. Therefore, the obtained configuration should not be considered globally optimal, and further tuning could potentially improve the results.
-In some experiments, models trained with default parameters, especially Random Forest and Logistic Regression, showed competitive performance. This suggests that model behavior may depend on the selected hyperparameter search space and evaluation setting.
+Random Forest showed the most reliable performance in the main comparison, achieving the highest mean cross-validation accuracy and the best test-set accuracy. However, the hyperparameter search was performed on a limited search space. Therefore, the selected configuration should not be considered globally optimal, and further tuning could potentially improve the results.
+In some experiments, models trained with default parameters, especially Random Forest and Logistic Regression, also showed competitive performance. This suggests that model behavior may depend on the selected hyperparameter search space and evaluation setting.
 
-For more complete results, please consult the code directly.
+Detailed outputs are available in the notebook.
 
 ---
 
@@ -158,8 +157,8 @@ For more complete results, please consult the code directly.
 
 ## Future Developments
 
-- Integrating the full preprocessing workflow into a machine learning pipeline
-- Applying resampling techniques only within the training process to avoid data leakage
-- Expanding the hyperparameter search space
-- Testing additional models and evaluation strategies
-- Comparing performance on larger versions of the dataset
+- Integrate the full preprocessing workflow into a machine learning pipeline
+- Apply resampling techniques only within the training process to avoid data leakage
+- Expand the hyperparameter search space
+- Test additional models and evaluation strategies
+- Compare performance on larger versions of the dataset
