@@ -16,7 +16,7 @@ It includes clinical measurements, demographic information, treatment-related va
 
 The target variable is:
 
-- `infected`: binary classification target. The patient is infected with AIDS (0=No, 1=Yes)
+- `infected`: binary classification target. 
 
 The dataset was obtained from Kaggle and is related to a clinical study/article concerning AIDS patient treatment and outcomes.
 
@@ -34,30 +34,29 @@ The dataset contains the following attributes:
 
 | Attribute | Description |
 |---|---|
-| `time` | TODO: add description |
-| `trt` | TODO: add description |
-| `age` | TODO: add description |
-| `wtkg` | TODO: add description |
-| `hemo` | TODO: add description |
-| `homo` | TODO: add description |
-| `drugs` | TODO: add description |
-| `karnof` | TODO: add description |
-| `oprior` | TODO: add description |
-| `z30` | TODO: add description |
-| `zprior` | TODO: add description |
-| `preanti` | TODO: add description |
-| `race` | TODO: add description |
-| `gender` | TODO: add description |
-| `str2` | TODO: add description |
-| `strat` | TODO: add description |
-| `symptom` | TODO: add description |
-| `treat` | TODO: add description |
-| `offtrt` | TODO: add description |
-| `cd40` | TODO: add description |
-| `cd420` | TODO: add description |
-| `cd80` | TODO: add description |
-| `cd820` | TODO: add description |
-| `infected` | Target variable for binary classification. |
+| `time` | time to failure or censoring. The time in hours/days elapsed until an event of interest (development of advanced symptoms or the achievement of a specific health state) occurs.Or it is the censoring time, i.e. the patient is still under treatment or has not yet reached the event of interest. |
+| `trt` | treatment indicator (0 = ZDV; 1 = ZDV + ddI, 2 = ZDV + Zal, 3 = ddI). Where ZDV = zidovudine, ddI = didanosine, Zal = zalcitabine. |
+| `age` | age (yrs) at baseline |
+| `wtkg` | weight (kg) at baseline |
+| `hemo` | hemophilia (0=no, 1=yes) |
+| `homo` | homosexual activity (0=no, 1=yes) |
+| `drugs` | history of IV drug use (0=no, 1=yes) |
+| `karnof` | Karnofsky score (on a scale of 0-100). It is a system used to evaluate the functional status and autonomy of a patient with a disease.The Karnofsky score ranges from 100 to 0, where: 100 represents a perfect state of health and normal activity without signs of illness; 0 represents a state of coma or death. |
+| `oprior` | Non-ZDV antiretroviral therapy pre-175 (0=no, 1=yes). So, it evaluates whether the patient has undergone non-zidovudine-based antiretroviral therapy prior to initiating treatment (175 weeks earlier). |
+| `z30` | ZDV was administered in the 30 days prior to the 175-week mark of observation. (0=no, 1=yes) |
+| `preanti` | days pre-175 antiretroviral therapy. Number of days or the duration that a patient has been on anti-retroviral therapy before reaching the 175-week mark since the start of observation or treatment. |
+| `race` | race (0=White, 1=non-white) |
+| `gender` | gender (0=F, 1=M) |
+| `str2` | antiretroviral history (0=naive, 1=experienced). "Naive" indicates that the patient have had no prior experience with antiretroviral therapy (they are newly diagnosed or have not yet started treatment for HIV); while "experienced" indicates that the patient has had prior experience with antiretroviral drugs, meaning they have received antiretroviral treatments in the past (with continuous treatment over time or interrupted and restarted). |
+| `strat` | antiretroviral history stratification (1 = 'Antiretroviral Naive', 2 = '> 1 but <= 52 weeks of prior antiretroviral therapy', 3 = '> 52 weeks') |
+| `symptom` | symptomatic indicator (0=asymp, 1=symp) |
+| `treat` | treatment indicator (0=ZDV only, 1=others) |
+| `offtrt` | indicator of off-trt before 96+/-5 weeks (0=no,1=yes). Indicator related to treatment cessation (off-trt) within a specific period of time. |
+| `cd40` | CD4 at baseline. CD4 is a surface protein found primarily on cells of the human immune system called helper T lymphocytes. HIV selectively attacks and destroys CD4+ cells, progressively weakening the immune system and making the body more vulnerable to opportunistic infections and other complications.Therefore, the count of CD4+ cells is used as an indicator to assess the severity of HIV infection and to monitor the progression of the disease over time. |
+| `cd420` | CD4 at 20+/-5 weeks |
+| `cd80` | CD8 at baseline. The CD8 is a surface protein found primarily on cells of the human immune system called cytotoxic T lymphocytes. These cells play a crucial role in defending the body against viral infections and tumor cells. |
+| `cd820` | CD8 at 20+/-5 weeks |
+| `infected` |  target variable. The patient is infected with AIDS (0=No, 1=Yes) |
 
 ---
 
