@@ -21,7 +21,7 @@ The target variable is:
 The dataset was obtained from Kaggle and is related to a clinical study/article concerning AIDS patient treatment and outcomes.
 
 - Dataset source: [Kaggle - AIDS Virus Infection Prediction](https://www.kaggle.com/datasets/aadarshvelu/aids-virus-infection-prediction/data)
-- Related article/reference: [A trial comparing nucleoside monotherapy with combination therapy in HIV-infected adults with CD4 cell counts from 200 to 500 per cubic millimeter.](DOI: 10.1056/NEJM199610103351501)
+- Related article/reference: [A trial comparing nucleoside monotherapy with combination therapy in HIV-infected adults with CD4 cell counts from 200 to 500 per cubic millimeter.](10.1056/NEJM199610103351501)
 
 For licensing and privacy reasons, the dataset is not included in this repository.  
 Please download it directly from Kaggle before running the notebook.
